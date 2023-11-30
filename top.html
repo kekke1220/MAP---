@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="top.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <img class="img1" src="https://okayama-consulting.net/wp-content/uploads/2023/02/dr_udegumi_1200_630-1024x538.jpg" alt="top-img" width="100%" height="800px">
+    <h1 class="title1">mediside</h1>
+    <div class="title2">医療者と医療機関だけの副業マッチングサイト</div>
+
+    <button id="btn-1">新規登録</button>
+    <button id="btn-2">ログイン</button>
+
+    <button class="button-007" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="39" height="29">
+            <path fill="#ffffff" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+    </button>
+
+    <button class="button-006" aria-label="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29">
+            <path fill="#fff" d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/>
+        </svg>
+    </button>
+
+    <button class="button-009" aria-label="LINE">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29">
+            <path fill="#fff" d="M18.663 10.84a.526.526 0 0 1-.526.525h-1.462v.938h1.462a.525.525 0 1 1 0 1.049H16.15a.526.526 0 0 1-.522-.524V8.852c0-.287.235-.525.525-.525h1.988a.525.525 0 0 1-.003 1.05h-1.462v.938h1.462c.291 0 .526.237.526.525zm-4.098 2.485a.538.538 0 0 1-.166.025.515.515 0 0 1-.425-.208l-2.036-2.764v2.45a.525.525 0 0 1-1.047 0V8.852a.522.522 0 0 1 .52-.523c.162 0 .312.086.412.211l2.052 2.775V8.852c0-.287.235-.525.525-.525.287 0 .525.238.525.525v3.976a.524.524 0 0 1-.36.497zm-4.95.027a.526.526 0 0 1-.523-.524V8.852c0-.287.236-.525.525-.525.289 0 .524.238.524.525v3.976a.527.527 0 0 1-.526.524zm-1.53 0H6.098a.528.528 0 0 1-.525-.524V8.852a.527.527 0 0 1 1.05 0v3.45h1.464a.525.525 0 0 1 0 1.05zM12 2.572c-5.513 0-10 3.643-10 8.118 0 4.01 3.558 7.369 8.363 8.007.325.068.769.215.881.492.1.25.066.638.032.9l-.137.85c-.037.25-.2.988.874.537 1.076-.449 5.764-3.398 7.864-5.812C21.313 14.089 22 12.477 22 10.69c0-4.475-4.488-8.118-10-8.118z"/>
+        </svg>
+    </button>
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="test.js"></script>
+<!-- JQuery -->
+
+<script type="module">
+//###############################################
+// 必要なJSを読み込み
+//###############################################
+import { initializeApp } 
+  from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } 
+  from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+
+
+//###############################################
+// Your web app's Firebase configuration
+//###############################################
+const firebaseConfig = api;
+
+const app = initializeApp(firebaseConfig);
+
+
+//###############################################
+//GoogleAuth用
+//###############################################
+const provider = new GoogleAuthProvider();
+provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+const auth = getAuth();
+
+
+//###############################################
+//Login処理
+//###############################################
+$("#btn-2").on("click",function(){
+    signInWithPopup(auth, provider).then((result) => {
+        //Login後のページ遷移
+        location.href="http://127.0.0.1:5500/sub.html"; 
+
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+    });
+});
+
+</script>
+    
+</body>
+</html>
+
+
+function searchRoute() {
+    // 出発地と目的地の座標を取得
+    let startLocation = document.getElementById('startLocation').value;
+    let endLocation = document.getElementById('endLocation').value;
+
+    // Waypointsをクリア
+    directionsManager.clearAll();
+
+    // 出発地と目的地の座標を設定
+    let startWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: startLocation });
+    let endWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: endLocation });
+
+    // Waypointsを追加
+    directionsManager.addWaypoint(startWaypoint);
+    directionsManager.addWaypoint(endWaypoint);
+
+    // 徒歩モードを有効にする
+    directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.walking });
+
+
+    // ルートの計算
+    directionsManager.calculateDirections();

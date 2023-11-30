@@ -1,0 +1,132 @@
+.title1 {
+    font-size: 100px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 450px;
+    left: 50px;
+}
+
+.title2 {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 450px;
+    left: 50px;
+}
+
+.img1 {
+    position: relative;
+}
+
+#btn-1 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    padding: 1em 2em;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+    background-color: #e7e7e7;
+    color: #100f0f;
+    font-weight: 600;
+    font-size: 20px;
+    bottom: 250px;
+    left: 400px;
+    }
+    
+    #btn-1:hover {
+        box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
+    }
+
+#btn-2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    padding: 1em 2em;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+    background-color: #e7e7e7;
+    color: #100f0f;
+    font-weight: 600;
+    font-size: 20px;
+    bottom: 250px;
+    left: 100px;
+    }
+    
+    #btn-2:hover {
+        box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
+    }
+
+    .button-007 {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        background-color: #1877f2;
+        bottom: 50px;
+        left: 50px;
+    }
+    
+    .button-007:hover {
+        border: 1px solid #1877f2;
+        background-color: #fff;
+    }
+    
+    .button-007:hover path {
+        fill: #1877f2;
+    }
+
+    .button-006 {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        background-color: #1da1f2;
+        bottom: 50px;
+        left: 120px;
+    }
+    
+    .button-006:hover {
+        border: 1px solid #1da1f2;
+        background-color: #fff;
+    }
+    
+    .button-006:hover path {
+        fill: #1da1f2;
+    }
+
+    .button-009 {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        background-color: #00b900;
+        bottom: 50px;
+        left: 190px;
+    }
+    
+    .button-009:hover {
+        border: 1px solid #00b900;
+        background-color: #fff;
+    }
+    
+    .button-009:hover path {
+        fill: #00b900;
+    }

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Infobox:showPointer&actions</title>
+    <meta charset="utf-8">
+    <style>body{padding:0;margin:0;background:#333;}h1{padding:0;margin:0;font-size:50%;color:white;}</style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>札幌市<br>現在求人中の医療機関</h1>
+
+<input type="text" id="startLocation" placeholder="出発地を入力">
+<input type="text" id="endLocation" placeholder="目的地を入力">
+<button id="searchButton" onclick="searchRoute()">検索</button>
+
+<div id="myMap" style='position:relative;width:100%;height:700px;'></div>
+
+
+<!-- [ infobox Object ] https://msdn.microsoft.com/en-us/library/mt712658.aspx -->
+<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Auc_Ml-CgsQk1OE4myIJY8kF4yxCzRp00kYz7B-JthPGh8tqQHfmBiwRmKFnWIfG' async defer></script>
+<script>
+
+function GetMap() {
+    // マップの初期化
+    let map = new Microsoft.Maps.Map('#myMap', {
+        zoom: 14
+    });
+
+    // 現在地を取得
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+    // 現在地の緯度と経度を取得
+        let currentLat = position.coords.latitude;
+        let currentLon = position.coords.longitude;
+
+    // 現在地の位置情報を作成
+        let currentLocation = new Microsoft.Maps.Location(currentLat, currentLon);
+
+    // 地図のセンターを現在地に変更
+        map.setView({ center: currentLocation });
+
+
+    // 現在地のPushpinを作成
+        let userPin = new Microsoft.Maps.Pushpin(currentLocation, {
+            title: '現在地',
+            color: 'red'// ピンの色
+        });
+
+        // Pushpinを地図に追加
+        map.entities.push(userPin);
+
+    });
+
+    //Infobox
+    let infobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.076398, 141.357267), {
+        title: '天使病院',
+        description: '日給1.2万円!残業なし!',
+        showPointer: true,     //Pointer
+        showCloseButton: true, //CloseButton
+        //Event:Create
+        actions: [{
+            label: 'HP',
+            eventHandler: function () { //function
+                location.href="https://www.tenshi.or.jp/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () { //function
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+
+    //Assign the infobox to a map instance.
+    infobox.setMap(map); //Add infobox to Map
+
+    
+
+    let infobox2 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.072405, 141.360085), {
+        title: '北新病院',
+        description: 'NS/日給1.2万',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://www.hokushin-hp.or.jp/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox2.setMap(map);
+
+    let infobox3 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.055235, 141.333242), {
+        title: '札幌医大附属病院',
+        description: 'PT/簡単業務、日給1万円',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://web.sapmed.ac.jp/hospital/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox3.setMap(map);
+
+    let infobox4 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.077747, 141.345524), {
+        title: '北海道大学病院',
+        description: 'Dr/急募!日給3万',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://www.huhp.hokudai.ac.jp/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox4.setMap(map);
+
+    let infobox5 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.070992, 141.334054), {
+        title: '市立札幌病院',
+        description: 'NS/桑園駅徒歩5分!',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://www.city.sapporo.jp/hospital/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox5.setMap(map);    
+
+    let infobox6 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.065607, 141.357329), {
+        title: 'JR札幌病院',
+        description: 'NS/日給1.2万!',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://hospital.jrhokkaido.co.jp/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox6.setMap(map);  
+
+    let infobox7 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.061832, 141.347920), {
+        title: '斗南病院',
+        description: 'OT/日給8千',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://www.tonan.kkr.or.jp/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox7.setMap(map); 
+
+    let infobox8 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.066731, 141.356981), {
+        title: 'JR札幌病院前デンタルクリニック',
+        description: '歯科衛生士/日給6千',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://www.sapporo-orange.com/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox8.setMap(map); 
+
+    let infobox9 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.080059, 141.389996), {
+        title: 'クラーク病院',
+        description: 'NS/日給1万',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://sansoukai.or.jp/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox9.setMap(map); 
+
+    let infobox10 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.100989, 141.346762), {
+        title: '札幌禎心会病院',
+        description: 'PT/日給8千',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://www.teishinkai.jp/thp/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox10.setMap(map); 
+
+    let infobox11 = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(43.082068, 141.345847), {
+        title: '松田整形外科記念病院',
+        description: 'NS/日給1.4万',
+        showPointer: true,
+        showCloseButton: true,
+        actions: [{
+            label: 'HP',
+            eventHandler: function () {
+                location.href="https://matsuda-oh.com/";
+            }
+        }, {
+            label: '求人票',
+            eventHandler: function () {
+                location.href="https://career.whitecross.co.jp/dstyle/wp-content/uploads/2018/11/od01_01.jpg";
+            }
+        }, {
+            label: '応募',
+            eventHandler: function () { //function
+                location.href="http://127.0.0.1:5500/o-boform.html";
+            }
+        }]
+    });
+    infobox11.setMap(map); 
+
+
+
+    // Directions モジュールの読み込み
+    Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+                // DirectionsManagerの作成
+                window.directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+
+                // ユーザーが指定した経路を表示
+                document.getElementById('searchButton').addEventListener('click', function () {
+                    searchRoute();
+                });
+            });
+        }
+
+        function searchRoute() {
+            // 出発地と目的地の座標を取得
+            let startLocation = document.getElementById('startLocation').value;
+            let endLocation = document.getElementById('endLocation').value;
+
+            // Waypointsをクリア
+            directionsManager.clearAll();
+
+            // 出発地と目的地の座標を設定
+            let startWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: startLocation });
+            let endWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: endLocation });
+
+            // Waypointsを追加
+            directionsManager.addWaypoint(startWaypoint);
+            directionsManager.addWaypoint(endWaypoint);
+
+            // 徒歩モードを有効にする
+            directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.walking });
+
+            // ルートの計算
+            directionsManager.calculateDirections();
+
+
+}
+
+</script>
+</body>
+</html>

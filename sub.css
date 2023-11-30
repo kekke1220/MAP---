@@ -1,0 +1,109 @@
+.img1 {
+    position: relative;
+}
+
+.btn1 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    padding: 1em 2em;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+    background-color: #e7e7e7;
+    color: #100f0f;
+    font-weight: 600;
+    font-size: 20px;
+    bottom: 470px;
+    left: 380px;
+    }
+    
+    .btn1:hover {
+        box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
+    }
+
+.btn2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    padding: 1em 2em;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+    background-color: #e7e7e7;
+    color: #100f0f;
+    font-weight: 600;
+    font-size: 20px;
+    bottom: 350px;
+    left: 380px;
+    }
+    
+    .btn2:hover {
+        box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
+    }
+
+    .btn3 {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        padding: 1em 2em;
+        border: 1px solid #e7e7e7;
+        border-radius: 5px;
+        box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+        background-color: #e7e7e7;
+        color: #100f0f;
+        font-weight: 600;
+        font-size: 20px;
+        bottom: 230px;
+        left: 380px;
+        }
+        
+        .btn3:hover {
+            box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
+        }
+
+        .btn4 {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            padding: 1em 2em;
+            border: 1px solid #e7e7e7;
+            border-radius: 5px;
+            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+            background-color: #e7e7e7;
+            color: #100f0f;
+            font-weight: 600;
+            font-size: 20px;
+            bottom: 110px;
+            left: 380px;
+            }
+            
+            .btn4:hover {
+                box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #fff;
+            }
+
+            .link {
+                position: absolute;
+            }
+
+            .a-all {
+                position: absolute;
+                bottom: 400px;
+                left: 710px;
+            }
+
+            .news {
+                position: absolute;
+                bottom: 150px;
+                left: 40px;
+                line-height: 3;
+            }
+
